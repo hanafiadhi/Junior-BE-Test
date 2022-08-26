@@ -25,6 +25,11 @@ const ArticleType = new GraphQLObjectType({
         },
         category: {
             type: GraphQLString
+        },komentar: {
+            type: new GraphQLList(CommentType),
+            resolve(parent,arg){
+                return comment.find({articleId: parent.id})
+            }
         }
     })
 })
