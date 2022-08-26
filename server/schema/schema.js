@@ -25,10 +25,15 @@ const ArticleType = new GraphQLObjectType({
         },
         category: {
             type: GraphQLString
-        },komentar: {
+        },
+        komentar: {
             type: new GraphQLList(CommentType),
-            resolve(parent,arg){
-                return comment.find({articleId: parent.id})
+            resolve(parent, arg) {
+                return comment.find({
+                    articleId: parent.id
+                }).sort({
+                    createdAt: -1
+                })
             }
         }
     })
@@ -63,14 +68,16 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(ArticleType),
             resolve(parent, args) {
                 return blog.find().sort({
-                    title: 1
+                    createdAt: -1
                 });
             }
         },
         comments: {
             type: new GraphQLList(CommentType),
             resolve(parent, args) {
-                return comment.find();
+                return comment.find().sort({
+                    createdAt: -1
+                });
             }
         },
         getArticle: {
