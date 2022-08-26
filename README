@@ -1,7 +1,9 @@
 
 # {
 #   articles{
-#     id,title,body, category,
+#     id,category,komentar{
+#       id,text
+#     }
 #   }
 # }
 
