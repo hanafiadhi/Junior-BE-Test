@@ -1,71 +1,23 @@
+# Foobar
 
-# {
-#   articles{
-#     id,category,komentar{
-#       id,text
-#     }
-#   }
-# }
+Foobar is a Python library for dealing with word pluralization.
 
+## Installation
 
-# {
-#   getArticle (id:"630785be939fbd7ba735bed4"){
-#     title,body,
-    
-#   }
-# }
+```bash
+npm install
+```
 
-# {
-#   comments{
-#     id,articleId,text
-#   }
-# }
+## Usage
 
-# {
-#   getComment(id:"6307446fd99cd5355ff9cb97"){
-#     id,blog{
-#       id
-#     }
-#   }
-# }
+```
+npm run dev
+```
 
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-# mutation {
-#   addArticle(title: "Graphql 5", body: "graphql is Easy", category: Graphql) {
-#     title
-#     body,
-#   }
-# }
+Please make sure to update tests as appropriate.
 
-# mutation {
-#   deleteArticle(id:"630725be9d4deef3047cfe39")
-#   {
-#     title,body
-#   }
-# }
-
-
-# mutation {
-#   UpdateArticle(id:"630785be939fbd7ba735bed4",title: "Graphql is best", body: "graphql is better than res api?" , category: Graphql)
-#   {
-#     title,body
-#   }
-# }
-
-# mutation {
-#   addComment(articleId:"630785be939fbd7ba735bed4",text: "i will"){
-#     text
-#   }
-# }
-
-# mutation {
-#   updateComment(id:"630788c2bd124aad9f74a66e",text:"comment Berubah"){
-#     text
-#   }
-# }
-
-# mutation {
-#   deleteComment(id:"6307690e4dd5c72caa14b322"){
-#     text
-#   }
-# }
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
